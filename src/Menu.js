@@ -4,7 +4,12 @@ function Menu() {
     return (
         <div>
             <h2>Menu</h2>
-            <Link to="/weather">Weather app</Link>
+            <div>
+                <Link to="/weather">Weather app</Link>
+            </div>
+            <div>
+                <Link to="/platinum_playable">Platinum Playable</Link>
+            </div>
         </div>
     );
 }
