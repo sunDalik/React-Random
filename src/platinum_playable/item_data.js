@@ -1,4 +1,12 @@
 const Rarity = Object.freeze({ C: 1, B: 2, A: 3, S: 4 })
+
+export const getRarityColor = (rarity) => {
+    if (rarity === Rarity.B) return "#94c9f2"
+    else if (rarity === Rarity.A) return "#84f081"
+    else if (rarity === Rarity.S) return "#f5e476"
+    else return "#ffffff";
+}
+
 const EquipmentType = Object.freeze({ Footwear: "Footwear", Armor: "Armor", Headwear: "Headwear", Weapon: "Weapon" })
 
 class Item {
