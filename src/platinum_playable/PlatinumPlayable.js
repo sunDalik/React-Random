@@ -4,7 +4,7 @@ import ItemBlock from "./ItemBlock";
 
 const PlatinumPlayable = () => {
     return (
-        <div>
+        <div className="background">
             <div className="flexbox_main">
                 {
                     Object.entries(itemData.reduce((acc, curr) => {

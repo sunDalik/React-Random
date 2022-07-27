@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+  margin: 12px;
+}
+
+.navbar {
+  background: rgb(49, 46, 68);
+  padding: 10px;
+}
+
+.icon-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
