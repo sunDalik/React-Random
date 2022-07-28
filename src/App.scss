@@ -9,7 +9,12 @@ body {
 
 .navbar {
   background: rgb(49, 46, 68);
-  padding: 10px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #eeeeee;
 }
 
 .icon-link {
