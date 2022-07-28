@@ -1,18 +1,43 @@
-.flexbox_category {
+.flexbox-category {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
 }
 
-.flexbox_main {
+.flexbox-main {
     display: flex;
     flex-direction: column;
 }
 
+.header-flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    >* {
+        margin: 0 10px;
+    }
+}
+
+.settings-box {
+    position: absolute;
+    width: 0;
+}
+
+.settings-box_inner {
+    position: relative;
+    top: 10px;
+    right: 60px;
+    width: 110px;
+    border: 1px solid gray;
+    padding: 10px;
+    background: #eeeeee;
+}
+
 .item-block_image {
-    width: 60px;
-    height: 60px;
+
     box-sizing: border-box;
     padding: 5px 5px;
 
@@ -22,6 +47,16 @@
         transform: scale(1.25);
         cursor: help;
     }
+}
+
+.small-image {
+    width: 50px;
+    height: 50px;
+}
+
+.big-image {
+    width: 70px;
+    height: 70px;
 }
 
 .item-description_parent {
