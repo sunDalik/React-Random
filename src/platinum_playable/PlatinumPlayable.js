@@ -13,6 +13,7 @@ const PlatinumPlayable = () => {
 
     const [bigIconSize, setBigIconSize] = useState(true);
     const [sortReverse, setSortReverse] = useState(false);
+    const [searchString, setSearchString] = useState("");
 
     const onItemBlockHover = (item) => {
         setCurrentItem(item);
@@ -27,7 +28,7 @@ const PlatinumPlayable = () => {
     return (
         <PlatinumPlayableSettingsContext.Provider value={{ bigIconSize, setBigIconSize, sortReverse, setSortReverse }}>
             <div className="header-flexbox">
-                <SearchBar />
+                <SearchBar onSearch={setSearchString} />
                 <SettingsBox />
             </div>
             <div className="playable-platinum-parent">
@@ -42,7 +43,7 @@ const PlatinumPlayable = () => {
                             return <div key={index}>
                                 <h3>{entry[0]}</h3>
                                 <div className="flexbox-category">
-                                    {sortItems(entry[1]).map((item, index) => <ItemBlock itemData={item} key={index} onHover={onItemBlockHover} />)}
+                                    {sortItems(entry[1]).filter(i => i.name.toLowerCase().includes(searchString.toLowerCase())).map(item => <ItemBlock itemData={item} key={item.name} onHover={onItemBlockHover} />)}
                                 </div>
                             </div>
                         })
