@@ -27,27 +27,29 @@ const PlatinumPlayable = () => {
 
     return (
         <PlatinumPlayableSettingsContext.Provider value={{ bigIconSize, setBigIconSize, sortReverse, setSortReverse }}>
-            <div className="header-flexbox">
-                <SearchBar onSearch={setSearchString} />
-                <SettingsBox />
-            </div>
             <div className="playable-platinum-parent">
                 <ItemDescriptionBox itemData={currentItem} />
-                <div className="flexbox-main">
-                    {
-                        Object.entries(itemData.reduce((acc, curr) => {
-                            acc[curr.type] = acc[curr.type] || [];
-                            acc[curr.type].push(curr);
-                            return acc;
-                        }, {})).map((entry, index) => {
-                            return <div key={index}>
-                                <h3>{entry[0]}</h3>
-                                <div className="flexbox-category">
-                                    {sortItems(entry[1]).filter(i => i.name.toLowerCase().includes(searchString.toLowerCase())).map(item => <ItemBlock itemData={item} key={item.name} onHover={onItemBlockHover} />)}
+                <div style={{ width: "100%" }}>
+                    <div className="header-flexbox">
+                        <SearchBar onSearch={setSearchString} />
+                        <SettingsBox />
+                    </div>
+                    <div className="flexbox-main">
+                        {
+                            Object.entries(itemData.reduce((acc, curr) => {
+                                acc[curr.type] = acc[curr.type] || [];
+                                acc[curr.type].push(curr);
+                                return acc;
+                            }, {})).map((entry, index) => {
+                                return <div key={index}>
+                                    <h3>{entry[0]}</h3>
+                                    <div className="flexbox-category">
+                                        {sortItems(entry[1]).filter(i => i.name.toLowerCase().includes(searchString.toLowerCase())).map(item => <ItemBlock itemData={item} key={item.name} onHover={onItemBlockHover} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        })
-                    }
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         </PlatinumPlayableSettingsContext.Provider>

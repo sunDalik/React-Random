@@ -1,13 +1,13 @@
 import "./platinum_playable.scss";
-import { getRarityColor } from "./item_data";
+import { getRarityColor, itemData } from "./item_data";
 
-const ItemDescriptionBox = ({ itemData }) => {
+const ItemDescriptionBox = ({ itemData: currentItem }) => {
     return (
         <div className="item-description_parent">
-            {itemData != null && <div className="item-description">
-                <div style={{ color: getRarityColor(itemData.rarity) }} className="item-description_name">{itemData.name}</div>
-                <img className="item-description_image" src={itemData.imagePath} alt={itemData.name} />
-                <div className="item-description_description">{itemData.description}</div>
+            {currentItem != null && <div className="item-description">
+                <div style={{ color: getRarityColor(currentItem.rarity) }} className="item-description_name">{currentItem.name}</div>
+                <img className="item-description_image" src={currentItem.imagePath} alt={currentItem.name} />
+                <div className="item-description_description">{currentItem.description}</div>
             </div>}
         </div>
     );

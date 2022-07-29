@@ -12,6 +12,8 @@
 
 .header-flexbox {
     display: flex;
+    position: sticky;
+    top: 5px;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -62,6 +64,9 @@
 .item-description_parent {
     min-width: 300px;
     max-width: 300px;
+    height: 500px;
+    background: linear-gradient(150deg, #d3d0ad 75%, #c7bd8f 75%);
+    padding: 10px 15px;
 }
 
 .item-description {
@@ -93,6 +98,7 @@
 .playable-platinum-parent {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     >* {
         margin-right: 30px;

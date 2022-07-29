@@ -1,6 +1,6 @@
 import React from "react";
 import WeatherDisplayBlock from "./WeatherDisplayBlock";
-import './weather.css';
+import './weather.scss';
 
 function WeatherApp() {
     const [city, setCity] = React.useState("");
@@ -20,7 +20,7 @@ function WeatherApp() {
     };
 
     return (
-        <div>
+        <div style={{ margin: "12px" }}>
             <form onSubmit={onSubmit}>
                 <input value={city} onChange={e => setCity(e.target.value)} placeholder="city" />
                 <input value={days} onChange={e => setDays(e.target.value)} placeholder="days" />
